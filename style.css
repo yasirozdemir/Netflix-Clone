@@ -46,3 +46,33 @@ nav i {
 .btn.btn-secondary.dropdown-toggle:focus {
   box-shadow: none;
 }
+
+#username {
+  border: none;
+}
+
+#username:focus-visible {
+  outline: none;
+}
+
+#language_input {
+  background-color: #000;
+  border: 1px solid white;
+  width: 130px;
+}
+
+#pen-icon {
+  opacity: 0%;
+  top: 6.8rem;
+  width: 25px;
+  height: 25px;
+  font-size: 0.8rem;
+  transition: opacity 250ms;
+}
+
+#edit-profile .position-relative {
+  height: 9rem;
+}
+#edit-profile .position-relative:hover #pen-icon {
+  opacity: 100%;
+}
