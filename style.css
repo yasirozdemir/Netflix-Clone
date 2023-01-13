@@ -10,27 +10,8 @@ nav i {
 .carousel-control-next {
   width: 50px;
   opacity: 0%;
-  transition: opacity 300ms;
-}
-
-.carousel-control-prev {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    270deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 0.7497199563419117) 100%
-  );
-}
-
-.carousel-control-next {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 0.7497199563419117) 100%
-  );
+  background-color: transparent;
+  transition: opacity 300ms, background-color 300ms;
 }
 
 .carousel-control-next:focus,
@@ -40,5 +21,28 @@ nav i {
 
 .carousel.slide:hover .carousel-control-prev,
 .carousel.slide:hover .carousel-control-next {
-  opacity: 100%;
+  opacity: 80%;
+}
+
+.carousel-control-prev:hover {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.7497199563419117) 100%
+  );
+}
+.carousel-control-next:hover {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.7497199563419117) 100%
+  );
+}
+
+.btn.btn-secondary.dropdown-toggle:focus {
+  box-shadow: none;
 }
