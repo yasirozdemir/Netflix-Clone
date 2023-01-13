@@ -1,0 +1,44 @@
+.bg-black {
+  background-color: black;
+}
+
+nav i {
+  cursor: pointer;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  opacity: 0%;
+  transition: opacity 300ms;
+}
+
+.carousel-control-prev {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.7497199563419117) 100%
+  );
+}
+
+.carousel-control-next {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.7497199563419117) 100%
+  );
+}
+
+.carousel-control-next:focus,
+.carousel-control-prev:focus {
+  opacity: 0%;
+}
+
+.carousel.slide:hover .carousel-control-prev,
+.carousel.slide:hover .carousel-control-next {
+  opacity: 100%;
+}
