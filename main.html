@@ -42,20 +42,24 @@
             <a href="#" class="nav-link">Recently Added</a>
             <a href="#" class="nav-link">My List</a>
           </div>
-          <div class='navbar-nav ml-auto d-flex align-items-center'>
+          <div class='navbar-nav ml-auto d-flex align-items-lg-center'>
             <i class="nav-link bi bi-search"></i>
             <a href="#" class="nav-link">KIDS</a>
             <i class="nav-link bi bi-bell-fill"></i></i>
 
-          <div class="btn-group">
+          <div class="btn-group mr-auto">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none">
                 <img class="img-fluid" src="./assets/avatar.png" alt="profiles icon" style="height: 2rem;">
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <button class="dropdown-item" type="button">Empathy is how</button>
-              <button class="dropdown-item border-dark border-bottom pb-2" type="button">kind hearts breathe :)</i></button>
-              <a href="./account.html" class="dropdown-item" role="button" aria-pressed="true"><i class="bi bi-person-circle"></i> Account</a>
-              <a href="./edit-profile.html" class="dropdown-item" role="button" aria-pressed="true"><i class="bi bi-pencil-square"></i> Edit profile</a>
+              <span class="dropdown-item user-select-none">Empathy is how</span>
+              <span class="dropdown-item border-dark border-bottom pb-2 user-select-none">kind hearts breathe :)</span>
+              <a href="./account.html" class="dropdown-item" role="button" aria-pressed="true">
+                <i class="bi bi-person-circle"></i> Account (click me)
+              </a>
+              <a href="./edit-profile.html" class="dropdown-item" role="button" aria-pressed="true">
+                <i class="bi bi-pencil-square"></i> 
+                Edit profile (click me)</a>
             </div>
           </div>
         </div>
@@ -63,169 +67,174 @@
         </div>
       </nav>
     </section>
+
     <section class="container-fluid align-items-center d-none d-lg-flex">
-        <h2>TV Shows</h2>
-        <div class="dropdown">
-            <a class="btn btn-outline-light dropdown-toggle ml-2" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-              Genres
-            </a>
-          
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Horror</a>
-              <a class="dropdown-item" href="#">Romance</a>
-              <a class="dropdown-item" href="#">Documentary</a>
-            </div>
-          </div>
-        <div class="ml-auto">
-            <button type="button" class="btn btn-outline-light"><i class="bi bi-calendar3-range px-2"></i></button>
-            <button type="button" class="btn btn-outline-light"><i class="bi bi-dice-4 px-2"></i></button>
+      <h2>TV Shows</h2>
+      <div class="dropdown">
+        <a class="btn btn-outline-light dropdown-toggle ml-2" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Genres
+        </a>
+      
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Horror</a>
+          <a class="dropdown-item" href="#">Romance</a>
+          <a class="dropdown-item" href="#">Documentary</a>
         </div>
+        </div>
+      <div class="ml-auto">
+        <button type="button" class="btn btn-outline-light">
+          <i class="bi bi-text-left px-3"></i>
+        </button>
+        <button type="button" class="btn btn-outline-light ml-1">
+          <i class="bi bi-film px-3"></i>
+        </button>
+      </div>
     </section>
 
     <section id="trending" class="container-fluid mt-sm-1 mt-md-2 mt-lg-3">
-        <h5>Trending Now</h5>
-        <div id="trendingCarousel" class="carousel slide" data-interval="false">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row no-gutters">
-                  <div class="col mr-1"><img src="./assets/media/media0.webp" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1"><img src="./assets/media/media1.jpg" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media2.webp" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media3.webp" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media4.jpg" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media5.webp" alt="" class='w-100 rounded-sm'></div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row no-gutters">
-                  <div class="col mr-1"><img src="./assets/media/media6.jpg" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1"><img src="./assets/media/media7.webp" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media8.webp" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media9.jpg" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media10.jpg" alt="" class='w-100 rounded-sm'></div>
-                  <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media11.jpg" alt="" class='w-100 rounded-sm'></div>
-                </div>
-              </div>
+      <h5>Trending Now</h5>
+      <div id="trendingCarousel" class="carousel slide" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row no-gutters">
+              <div class="col mr-1"><img src="./assets/media/media0.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media1.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media2.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media3.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media4.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media5.webp" alt="" class='w-100 rounded-sm'></div>
             </div>
-           <button class="carousel-control-prev" type="button" data-target="#trendingCarousel" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#trendingCarousel" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </button>
           </div>
+          <div class="carousel-item">
+            <div class="row no-gutters">
+              <div class="col mr-1"><img src="./assets/media/media6.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media7.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media8.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media9.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media10.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media11.jpg" alt="" class='w-100 rounded-sm'></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#trendingCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#trendingCarousel" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
     </section>
 
     <section id="watch-it-again" class="container-fluid mt-sm-1 mt-md-2 mt-lg-3">
-        <h5>Watch It Again</h5>
-        <div id="watchAgainCarousel" class="carousel slide" data-interval="false">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row no-gutters">
-                    <div class="col mr-1"><img src="./assets/media/media11.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1"><img src="./assets/media/media12.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media13.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media14.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media15.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media16.webp" alt="" class='w-100 rounded-sm'></div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row no-gutters">
-                    <div class="col mr-1"><img src="./assets/media/media17.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1"><img src="./assets/media/media18.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media19.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media20.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media21.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media22.webp" alt="" class='w-100 rounded-sm'></div>
-                </div>
-              </div>
+    <h5>Watch It Again</h5>
+    <div id="watchAgainCarousel" class="carousel slide" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row no-gutters">
+              <div class="col mr-1"><img src="./assets/media/media11.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media12.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media13.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media14.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media15.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media16.webp" alt="" class='w-100 rounded-sm'></div>
             </div>
-           <button class="carousel-control-prev" type="button" data-target="#watchAgainCarousel" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#watchAgainCarousel" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </button>
           </div>
+          <div class="carousel-item">
+            <div class="row no-gutters">
+              <div class="col mr-1"><img src="./assets/media/media17.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media18.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media19.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media20.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media21.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media22.webp" alt="" class='w-100 rounded-sm'></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#watchAgainCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#watchAgainCarousel" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
     </section>
 
     <section id="new-releases" class="container-fluid mt-sm-1 mt-md-2 mt-lg-3">
-        <h5>New Releases</h5>
-        <div id="newReleasesCarousel" class="carousel slide" data-interval="false">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row no-gutters">
-                    <div class="col mr-1"><img src="./assets/media/media22.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1"><img src="./assets/media/media23.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media24.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media25.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media26.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media27.jpg" alt="" class='w-100 rounded-sm'></div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row no-gutters">
-                    <div class="col-12 col-sm mr-1"><img src="./assets/media/media28.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col-sm d-none d-sm-block mx-1"><img src="./assets/media/media29.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media30.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media31.webp" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media32.jpg" alt="" class='w-100 rounded-sm'></div>
-                    <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media0.webp" alt="" class='w-100 rounded-sm'></div>
-                </div>
-              </div>
+    <h5>New Releases</h5>
+    <div id="newReleasesCarousel" class="carousel slide" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row no-gutters">
+              <div class="col mr-1"><img src="./assets/media/media22.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media23.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media24.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media25.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media26.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media27.jpg" alt="" class='w-100 rounded-sm'></div>
             </div>
-           <button class="carousel-control-prev" type="button" data-target="#newReleasesCarousel" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#newReleasesCarousel" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </button>
           </div>
+          <div class="carousel-item">
+            <div class="row no-gutters">
+              <div class="col-12 col-sm mr-1"><img src="./assets/media/media28.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col-sm d-none d-sm-block mx-1"><img src="./assets/media/media29.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-sm-block"><img src="./assets/media/media30.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-md-block"><img src="./assets/media/media31.webp" alt="" class='w-100 rounded-sm'></div>
+              <div class="col mx-1 d-none d-lg-block"><img src="./assets/media/media32.jpg" alt="" class='w-100 rounded-sm'></div>
+              <div class="col ml-1 d-none d-xl-block"><img src="./assets/media/media0.webp" alt="" class='w-100 rounded-sm'></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#newReleasesCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#newReleasesCarousel" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
     </section>
 
     <footer class="container d-flex flex-column align-items-center mt-2 mt-sm-3 mt-md-4 mt-lg-5">
-        <div>
-            <div class="row">
-                <div class="col">
-                    <a href="#" class="text-secondary mr-3" style="font-size: 1.2rem;"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-secondary mr-3" style="font-size: 1.2rem;"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-secondary mr-3" style="font-size: 1.2rem;"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="text-secondary" style="font-size: 1.2rem;"><i class="bi bi-youtube"></i></a>   
-                </div>
+      <div>
+        <div class="row">
+            <div class="col">
+              <a href="#" class="text-secondary mr-3" style="font-size: 1.2rem;"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-secondary mr-3" style="font-size: 1.2rem;"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-secondary mr-3" style="font-size: 1.2rem;"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-secondary" style="font-size: 1.2rem;"><i class="bi bi-youtube"></i></a>   
             </div>
-            <div class="row d-flex mt-2">
-                <div class="d-flex flex-column col">
-                    <a href="" class="text-secondary">Audio and Subtitles</a>
-                    <a href="" class="text-secondary mt-1">Media Center</a>
-                    <a href="" class="text-secondary mt-1">Privacy</a>
-                    <a href="" class="text-secondary mt-1">Contact Us</a>
-                </div>
-                <div class="d-flex flex-column col">
-                    <a href="" class="text-secondary">Audio Description</a>
-                    <a href="" class="text-secondary mt-1">Investor Relations</a>
-                    <a href="" class="text-secondary mt-1">Legal Notices</a>
-                </div>
-                <div class="d-flex flex-column col">
-                    <a href="" class="text-secondary">Help Center</a>
-                    <a href="" class="text-secondary mt-1">Jobs</a>
-                    <a href="" class="text-secondary mt-1">Cookie Preferences</a>
-                </div>
-                <div class="d-flex flex-column col">
-                    <a href="" class="text-secondary">Gift Cards</a>
-                    <a href="" class="text-secondary mt-1">Terms of Use</a>
-                    <a href="" class="text-secondary mt-1">Corporate Information</a>
-                </div>
-            </div>
-            <a href="#" class="col-4 col-sm-3 col-md-2 btn btn-outline-secondary rounded-0 px-1 py-1 mt-2" role="button" aria-disabled="true">Service Code</a>
-            <p class="text-secondary mt-2">© 1997-2019 Netflix, Inc.</p>
         </div>
+        <div class="row d-flex mt-2">
+            <div class="d-flex flex-column col">
+              <a href="" class="text-secondary">Audio and Subtitles</a>
+              <a href="" class="text-secondary mt-1">Media Center</a>
+              <a href="" class="text-secondary mt-1">Privacy</a>
+              <a href="" class="text-secondary mt-1">Contact Us</a>
+            </div>
+            <div class="d-flex flex-column col">
+              <a href="" class="text-secondary">Audio Description</a>
+              <a href="" class="text-secondary mt-1">Investor Relations</a>
+              <a href="" class="text-secondary mt-1">Legal Notices</a>
+            </div>
+            <div class="d-flex flex-column col">
+              <a href="" class="text-secondary">Help Center</a>
+              <a href="" class="text-secondary mt-1">Jobs</a>
+              <a href="" class="text-secondary mt-1">Cookie Preferences</a>
+            </div>
+            <div class="d-flex flex-column col">
+              <a href="" class="text-secondary">Gift Cards</a>
+              <a href="" class="text-secondary mt-1">Terms of Use</a>
+              <a href="" class="text-secondary mt-1">Corporate Information</a>
+            </div>
+          </div>
+          <a href="#" class="col-4 col-sm-3 col-md-2 btn btn-outline-secondary rounded-0 px-1 py-1 mt-2" role="button" aria-disabled="true" style="min-width: 110px;">Service Code</a>
+          <p class="text-secondary mt-2">© 1997-2019 Netflix, Inc.</p>
+      </div>
     </footer>
 
     <script
