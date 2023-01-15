@@ -2,12 +2,17 @@
   background-color: black;
 }
 
+.overflow-visible {
+  overflow: visible;
+}
+
 nav i {
   cursor: pointer;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
+  z-index: 2000;
   width: 50px;
   opacity: 0%;
   background-color: transparent;
@@ -59,14 +64,46 @@ nav i {
   box-shadow: none;
 }
 
+.carousel-item .col {
+  transition: transform 300ms;
+}
+
+.carousel-item .col:hover {
+  transform: scale(1.3) translateY(-11%);
+  z-index: 1000;
+}
+
+.carousel-item .col:hover ~ .col {
+  z-index: 500;
+}
+
+/* queries might be required for following two */
+
+.carousel-item .col.mr-1:hover {
+  transform: scale(1.3) translateY(-11%) translateX(10%);
+}
+
+.carousel-item .col.ml-1:hover {
+  transform: scale(1.3) translateY(-11%) translateX(-10%);
+}
+
 /* .overlay {
-  background-color: aqua;
-  z-index: 2000;
+  display: none;
+  opacity: 0%;
+  background-color: black;
+  z-index: 3000;
   height: 30vh;
-  top: 0;
+  top: 50%;
   right: 0;
   bottom: 0;
   left: 0;
+  transition: transform 300ms, opacity 300ms;
+}
+
+.carousel-item .col:hover .overlay {
+  transform: translateY(30%);
+  display: flex;
+  opacity: 100%;
 } */
 
 #username {
