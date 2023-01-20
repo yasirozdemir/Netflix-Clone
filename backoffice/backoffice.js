@@ -164,7 +164,6 @@ const displayMoviesOnAdminPanel = (moviesArray, genre) => {
     const tableContainer = document.createElement("div");
     tableContainer.className = "container";
     tableContainer.id = `${genre}Container`;
-    tableContainer.innerHTML = "";
     tableContainer.innerHTML = `
         <h4>${genre.toUpperCase()}:</h4>
         <div class="row">

@@ -55,60 +55,74 @@ const getMovies = async (genre) => {
   }
 };
 
-const horrorMoviesContainer = document.querySelector(
-  "#horrorMoviesContainer > .row"
-);
-const romanticContainer = document.querySelector(
-  "#romanticMoviesContainer > .row"
-);
-const documentariesContainer = document.querySelector(
-  "#documentariesContainer > .row"
-);
+// const horrorMoviesContainer = document.querySelector(
+//   "#horrorMoviesContainer > .row"
+// );
+// const romanticContainer = document.querySelector(
+//   "#romanticMoviesContainer > .row"
+// );
+// const documentariesContainer = document.querySelector(
+//   "#documentariesContainer > .row"
+// );
+
 const allMoviesContainer = document.querySelector("#allMoviesContainer");
+const genreDropdown = document.querySelector(".genreDropdown");
 
 const urlParams = new URLSearchParams(location.search);
 const ID = urlParams.get("id");
 console.log(ID);
 
 const displayMovies = (moviesArray, genre) => {
-  let spaceForMovies = null;
-  switch (genre) {
-    case "horror":
-      spaceForMovies = horrorMoviesContainer;
-      break;
-    case "romantic":
-      spaceForMovies = romanticContainer;
-      break;
-    case "documentary":
-      spaceForMovies = documentariesContainer;
-      break;
-  }
+  // let spaceForMovies = null;
+  // switch (genre) {
+  //   case "horror":
+  //     spaceForMovies = horrorMoviesContainer;
+  //     break;
+  //   case "romantic":
+  //     spaceForMovies = romanticContainer;
+  //     break;
+  //   case "documentary":
+  //     spaceForMovies = documentariesContainer;
+  //     break;
+  // }
 
-  switch (ID) {
-    case null:
-      horrorMoviesContainer.remove();
-      romanticContainer.remove();
-      documentariesContainer.remove();
-      break;
-    case "horror":
-      allMoviesContainer.remove();
-      romanticContainer.remove();
-      documentariesContainer.remove();
-      break;
-    case "romantic":
-      allMoviesContainer.remove();
-      horrorMoviesContainer.remove();
-      documentariesContainer.remove();
-      break;
-    case "documentary":
-      allMoviesContainer.remove();
-      horrorMoviesContainer.remove();
-      romanticContainer.remove();
-      break;
-  }
+  // switch (ID) {
+  //   case null:
+  //     horrorMoviesContainer.remove();
+  //     romanticContainer.remove();
+  //     documentariesContainer.remove();
+  //     break;
+  //   case "horror":
+  //     allMoviesContainer.remove();
+  //     romanticContainer.remove();
+  //     documentariesContainer.remove();
+  //     break;
+  //   case "romantic":
+  //     allMoviesContainer.remove();
+  //     horrorMoviesContainer.remove();
+  //     documentariesContainer.remove();
+  //     break;
+  //   case "documentary":
+  //     allMoviesContainer.remove();
+  //     horrorMoviesContainer.remove();
+  //     romanticContainer.remove();
+  //     break;
+  // }
 
-  if (spaceForMovies !== null) {
-    moviesHTML = moviesArray
+  // if (spaceForMovies !== null) {
+
+  const check = document.querySelector(`#${genre}Container`);
+  if (check === null) {
+    const newGenreContainer = document.createElement("div");
+    newGenreContainer.className = "container-fluid mt-sm-1 mt-md-2 mt-lg-3";
+    newGenreContainer.id = `${genre}Container`;
+    newGenreContainer.innerHTML = `<div class="row justify-content-around px-3 no-gutters">`;
+
+    allMoviesContainer.appendChild(newGenreContainer);
+
+    genreDropdown.innerHTML += `<a class="dropdown-item" href="./main.html?id=${genre}">${genre.toUpperCase()}</a>`;
+
+    const moviesHTML = moviesArray
       .map(({ name, description, imageUrl }) => {
         return `<div class="movie-card card col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-2 my-2" style="width: 18rem;">
                   <img src="${imageUrl}" class="card-img-top">
@@ -120,8 +134,14 @@ const displayMovies = (moviesArray, genre) => {
                 </div>`;
       })
       .join("");
-    spaceForMovies.innerHTML = moviesHTML;
+
+    const moviesGoHere = document.querySelector(`#${genre}Container > .row`);
+
+    moviesGoHere.innerHTML = moviesHTML;
   }
+
+  // spaceForMovies.innerHTML = moviesHTML;
+  // }
 };
 
 window.onload = async () => {
