@@ -13,3 +13,12 @@ body {
 h4 {
   color: white;
 }
+
+tbody tr img {
+  transition: transform 300ms, scale 500ms;
+}
+
+tbody tr:hover img {
+  scale: 3.7;
+  transform: translateX(40%);
+}

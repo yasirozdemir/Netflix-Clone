@@ -6,21 +6,15 @@ const allMoviesContainer = document.querySelector("#allMoviesContainer");
 
 window.onload = async () => {
   try {
+    getGenres();
     if (ID !== null) {
       // editing
       const publishButton = document.querySelector("#publishButton");
       publishButton.remove();
-      allMoviesContainer.remove();
-
-      //   const response = await fetch(`${url}${ID}`, optionsToGet);
-
-      //   if (response.ok) {
-      //     const data = await response.json();
-      //     console.log(data);
-      //   }
+      allMoviesContainer.classList.add("d-none");
     } else {
       // publishing a new one
-      getGenres();
+
       const editButton = document.querySelector("#editButton");
       editButton.remove();
       const backButton = document.querySelector("#backButton");
@@ -150,10 +144,14 @@ const getGenres = async () => {
   }
 };
 
+const moviesArray = [];
 const getMovies = async (genre) => {
   try {
     const response = await fetch(url + "/" + genre, optionsToGet);
     const movieData = await response.json();
+    movieData.forEach((movie) => {
+      moviesArray.push(movie);
+    });
     displayMoviesOnAdminPanel(movieData, genre);
   } catch (error) {
     console.error(error);
