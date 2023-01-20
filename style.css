@@ -179,3 +179,8 @@ nav i {
   text-align: center;
   font-weight: 600;
 }
+
+.movie-card img {
+  height: 8em;
+  object-fit: cover;
+}

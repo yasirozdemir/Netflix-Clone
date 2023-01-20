@@ -114,6 +114,7 @@ const displayMovies = (moviesArray, genre) => {
                   <img src="${imageUrl}" class="card-img-top">
                   <div class="card-body">
                     <p class="card-title">${name}</p>
+                    <div class="dropdown-divider"></div>
                     <p class="card-text">${description}</p>
                   </div>
                 </div>`;
