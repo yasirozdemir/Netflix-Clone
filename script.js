@@ -31,19 +31,99 @@ const optionsToGet = {
   }),
 };
 
-let allMovies = []; // temp memory of movies jus in case of a need
-
-const getMovies = async () => {
-  const response = await fetch(url, optionsToGet);
-  const movieData = await response.json();
-  console.log(movieData);
-  movieData.forEach((movie) => {
-    allMovies.push(movie);
-  });
-  console.log(allMovies);
+const genresArray = [];
+const getGenres = async () => {
+  try {
+    const response = await fetch(url, optionsToGet);
+    const genres = await response.json();
+    genres.forEach((genre) => {
+      genresArray.push(genre);
+      getMovies(genre);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-window.onload = () => {
+const getMovies = async (genre) => {
+  try {
+    const response = await fetch(url + "/" + genre, optionsToGet);
+    const movieData = await response.json();
+    displayMovies(movieData, genre);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const horrorMoviesContainer = document.querySelector(
+  "#horrorMoviesContainer > .row"
+);
+const romanticContainer = document.querySelector(
+  "#romanticMoviesContainer > .row"
+);
+const documentariesContainer = document.querySelector(
+  "#documentariesContainer > .row"
+);
+const allMoviesContainer = document.querySelector("#allMoviesContainer");
+
+const urlParams = new URLSearchParams(location.search);
+const ID = urlParams.get("id");
+console.log(ID);
+
+const displayMovies = (moviesArray, genre) => {
+  let spaceForMovies = null;
+  switch (genre) {
+    case "horror":
+      spaceForMovies = horrorMoviesContainer;
+      break;
+    case "romantic":
+      spaceForMovies = romanticContainer;
+      break;
+    case "documentary":
+      spaceForMovies = documentariesContainer;
+      break;
+  }
+
+  switch (ID) {
+    case null:
+      horrorMoviesContainer.remove();
+      romanticContainer.remove();
+      documentariesContainer.remove();
+      break;
+    case "horror":
+      allMoviesContainer.remove();
+      romanticContainer.remove();
+      documentariesContainer.remove();
+      break;
+    case "romantic":
+      allMoviesContainer.remove();
+      horrorMoviesContainer.remove();
+      documentariesContainer.remove();
+      break;
+    case "documentary":
+      allMoviesContainer.remove();
+      horrorMoviesContainer.remove();
+      romanticContainer.remove();
+      break;
+  }
+
+  if (spaceForMovies !== null) {
+    moviesHTML = moviesArray
+      .map(({ name, description, imageUrl }) => {
+        return `<div class="movie-card card col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-2 my-2" style="width: 18rem;">
+                  <img src="${imageUrl}" class="card-img-top">
+                  <div class="card-body">
+                    <p class="card-title">${name}</p>
+                    <p class="card-text">${description}</p>
+                  </div>
+                </div>`;
+      })
+      .join("");
+    spaceForMovies.innerHTML = moviesHTML;
+  }
+};
+
+window.onload = async () => {
+  getGenres();
   addOverlays();
-  getMovies();
 };

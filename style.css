@@ -166,3 +166,16 @@ nav i {
 #edit-profile .position-relative:hover #pen-icon {
   opacity: 100%;
 }
+
+.movie-card {
+  background-color: rgba(236, 230, 230, 0.747);
+  color: black;
+  height: 17em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card .card-title {
+  text-align: center;
+  font-weight: 600;
+}

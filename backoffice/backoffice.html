@@ -19,8 +19,47 @@
     <link rel="stylesheet" href="./backoffice.css" />
   </head>
   <body>
-    <section class="container">
-      <h4>Publish a new movie:</h4>
+    <section class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark px-0">
+        <a class="navbar-brand" href="../main.html"
+          ><img class="img-fluid" src="../assets/netflix_logo.png" alt="netflix_logo" style='height: 2rem;'></img></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class='navbar-nav ml-auto d-flex align-items-lg-center'>
+            <i class="nav-link bi bi-search"></i>
+            <a href="#" class="nav-link">KIDS</a>
+            <i class="nav-link bi bi-bell-fill"></i></i>
+
+          <div class="btn-group mr-auto">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background: none">
+                <img class="img-fluid" src="../assets/avatar.png" alt="profiles icon" style="height: 2rem;">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="../backoffice/" class="dropdown-item border-dark border-bottom pb-2 user-select-none">Back Office</a>
+              <a href="../account.html" class="dropdown-item" role="button" aria-pressed="true">
+                <i class="bi bi-person-circle"></i> Account (click me)
+              </a>
+              <a href="../edit-profile.html" class="dropdown-item" role="button" aria-pressed="true">
+                <i class="bi bi-pencil-square"></i> 
+                Edit profile (click me)</a>
+            </div>
+          </div>
+        </div>
+    
+        </div>
+      </nav>
+    </section>
+    <section class="container mt-4">
       <div class="row">
         <form class="col">
           <div class="input-group mb-3">
@@ -103,56 +142,7 @@
       </div>
     </section>
 
-    <section id="horrorMovies" class="container">
-      <h4>Horror Movies:</h4>
-      <div class="row">
-        <div class="col">
-          <table class="table table-hover table-secondary">
-            <thead>
-              <th scope="col">Movie Preview</th>
-              <th scope="col">Name</th>
-              <th scope="col">ID</th>
-              <th scope="col">Buttons</th>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="romanticMovies" class="container">
-      <h4>Romantic Movies:</h4>
-      <div class="row">
-        <div class="col">
-          <table class="table table-hover table-secondary">
-            <thead>
-              <th scope="col">Movie Preview</th>
-              <th scope="col">Name</th>
-              <th scope="col">ID</th>
-              <th scope="col">Buttons</th>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="Documentaries" class="container">
-      <h4>Documentaries:</h4>
-      <div class="row">
-        <div class="col">
-          <table class="table table-hover table-secondary">
-            <thead>
-              <th scope="col">Movie Preview</th>
-              <th scope="col">Name</th>
-              <th scope="col">ID</th>
-              <th scope="col">Buttons</th>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+    <section id="allMoviesContainer"></section>
 
     <script src="./backoffice.js"></script>
     <script
