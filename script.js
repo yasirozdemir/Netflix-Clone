@@ -116,11 +116,15 @@ const displayMovies = (moviesArray, genre) => {
     const newGenreContainer = document.createElement("div");
     newGenreContainer.className = "container-fluid mt-sm-1 mt-md-2 mt-lg-3";
     newGenreContainer.id = `${genre}Container`;
-    newGenreContainer.innerHTML = `<div class="row justify-content-around px-3 no-gutters">`;
+    newGenreContainer.innerHTML = `<h5>${
+      genre.charAt(0).toUpperCase() + genre.slice(1)
+    }</h5><div class="row justify-content-around px-3 no-gutters">`;
 
     allMoviesContainer.appendChild(newGenreContainer);
 
-    genreDropdown.innerHTML += `<a class="dropdown-item" href="./main.html?id=${genre}">${genre.toUpperCase()}</a>`;
+    genreDropdown.innerHTML += `<a class="dropdown-item" href="#${genre}Container">${
+      genre.charAt(0).toUpperCase() + genre.slice(1)
+    }</a>`;
 
     const moviesHTML = moviesArray
       .map(({ name, description, imageUrl }) => {
