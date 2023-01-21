@@ -19,6 +19,6 @@ tbody tr img {
 }
 
 tbody tr:hover img {
-  scale: 3.7;
-  transform: translateX(40%);
+  scale: 3;
+  transform: translateX(30%);
 }
