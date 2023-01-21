@@ -137,6 +137,7 @@ const getGenres = async () => {
     const genres = await response.json();
     genres.forEach((genre) => {
       genresArray.push(genre);
+      getMovies(genre);
     });
   } catch (error) {
     console.error(error);
@@ -148,6 +149,7 @@ const getMovies = async (genre) => {
   try {
     const response = await fetch(url + "/" + genre, optionsToGet);
     const movieData = await response.json();
+    // console.log(movieData);
     movieData.forEach((movie) => {
       moviesArray.push(movie);
     });
@@ -164,7 +166,7 @@ const displayMoviesOnAdminPanel = (moviesArray, genre) => {
     tableContainer.className = "container";
     tableContainer.id = `${genre}Container`;
     tableContainer.innerHTML = `
-        <h4>${genre.charAt(0).toUpperCase() + genre.slice(1)}</h4>
+        <h4>${genre.charAt(0).toUpperCase() + genre.slice(1)}:</h4>
         <div class="row">
           <div class="col">
             <table class="table table-hover table-dark">
