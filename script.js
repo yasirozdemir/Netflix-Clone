@@ -24,7 +24,6 @@ function addOverlays() {
 const url = "https://striveschool-api.herokuapp.com/api/movies";
 
 const optionsToGet = {
-  // method: "GET" <- not needed because it's the default one of .fetch()
   headers: new Headers({
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5MzgxYWU3MzczODAwMTUzNzQzN2MiLCJpYXQiOjE2NzQyMDQ0MjUsImV4cCI6MTY3NTQxNDAyNX0.AEa3A6zDgOYkw4EmzWMh3aKhpz1vxOYOhft6_lbropo",
@@ -55,16 +54,6 @@ const getMovies = async (genre) => {
   }
 };
 
-// const horrorMoviesContainer = document.querySelector(
-//   "#horrorMoviesContainer > .row"
-// );
-// const romanticContainer = document.querySelector(
-//   "#romanticMoviesContainer > .row"
-// );
-// const documentariesContainer = document.querySelector(
-//   "#documentariesContainer > .row"
-// );
-
 const allMoviesContainer = document.querySelector("#allMoviesContainer");
 const genreDropdown = document.querySelector(".genreDropdown");
 
@@ -73,44 +62,6 @@ const ID = urlParams.get("id");
 console.log(ID);
 
 const displayMovies = (moviesArray, genre) => {
-  // let spaceForMovies = null;
-  // switch (genre) {
-  //   case "horror":
-  //     spaceForMovies = horrorMoviesContainer;
-  //     break;
-  //   case "romantic":
-  //     spaceForMovies = romanticContainer;
-  //     break;
-  //   case "documentary":
-  //     spaceForMovies = documentariesContainer;
-  //     break;
-  // }
-
-  // switch (ID) {
-  //   case null:
-  //     horrorMoviesContainer.remove();
-  //     romanticContainer.remove();
-  //     documentariesContainer.remove();
-  //     break;
-  //   case "horror":
-  //     allMoviesContainer.remove();
-  //     romanticContainer.remove();
-  //     documentariesContainer.remove();
-  //     break;
-  //   case "romantic":
-  //     allMoviesContainer.remove();
-  //     horrorMoviesContainer.remove();
-  //     documentariesContainer.remove();
-  //     break;
-  //   case "documentary":
-  //     allMoviesContainer.remove();
-  //     horrorMoviesContainer.remove();
-  //     romanticContainer.remove();
-  //     break;
-  // }
-
-  // if (spaceForMovies !== null) {
-
   const check = document.querySelector(`#${genre}Container`);
   if (check === null) {
     const newGenreContainer = document.createElement("div");
@@ -118,7 +69,16 @@ const displayMovies = (moviesArray, genre) => {
     newGenreContainer.id = `${genre}Container`;
     newGenreContainer.innerHTML = `<h5>${
       genre.charAt(0).toUpperCase() + genre.slice(1)
-    }</h5><div class="row justify-content-around px-3 no-gutters">`;
+    }</h5>
+    <div class="movieScrollRow position-relative row justify-content-around no-gutters"></div>
+    `;
+
+    // <button type="button" onclick="prev(this)" class="position-absolute btn rounded-0 d-flex justify-content-center align-items-center">
+    //     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    //   </button>
+    //   <button type="button" onclick="next(this)" class="position-absolute btn rounded-0 d-flex justify-content-center align-items-center">
+    //     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    //   </button>
 
     allMoviesContainer.appendChild(newGenreContainer);
 
@@ -127,10 +87,24 @@ const displayMovies = (moviesArray, genre) => {
     }</a>`;
 
     const moviesHTML = moviesArray
-      .map(({ name, description, imageUrl }) => {
-        return `<div class="movie-card card col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-2 my-2" style="width: 18rem;">
+      .map(({ name, description, imageUrl, category }) => {
+        return `<div class="movieCard card col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-1 my-2">
                   <img src="${imageUrl}" class="card-img-top">
-                  <div class="card-body">
+                  <div class="overlayType2  position-absolute d-flex justify-content-start align-items-start bg-black p-2 rounded-bottom">
+                   <button type="button" class="btn btn-light rounded-circle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-light rounded-circle ml-1">
+                            <i class="bi bi-plus"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-light rounded-circle ml-1">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-light rounded-circle ml-auto" data-toggle="modal" data-target="#moreInfoModal" onclick="infoFill('${name}', '${description}', '${imageUrl}', '${category}')">
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                  </div>
+                  <div class="card-body d-none">
                     <p class="card-title">${name}</p>
                     <div class="dropdown-divider"></div>
                     <p class="card-text">${description}</p>
@@ -141,11 +115,27 @@ const displayMovies = (moviesArray, genre) => {
 
     const moviesGoHere = document.querySelector(`#${genre}Container > .row`);
 
-    moviesGoHere.innerHTML = moviesHTML;
+    moviesGoHere.innerHTML += moviesHTML;
   }
+};
 
-  // spaceForMovies.innerHTML = moviesHTML;
-  // }
+const prev = (btn) => {
+  console.log(btn);
+};
+
+const next = (btn) => {
+  btn.parentNode.scrollLeft -= 1000;
+};
+
+const infoFill = (name, description, imageUrl, genre) => {
+  document.querySelector("#moreInfoModalLabel").innerText = name;
+  document.querySelector("#moreInfoModal .modal-body").innerHTML = `
+              <img src="${imageUrl}" class="w-100"></img>
+              <p class="text-secondary text-center">${
+                genre.charAt(0).toUpperCase() + genre.slice(1)
+              }</p>
+              <p>${description}</p>    
+  `;
 };
 
 window.onload = async () => {
